@@ -76,7 +76,7 @@ namespace LearnRoslyn.Test
 
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
-            return new LearnRoslynAnalyzer();
+            return new LocalVariableCamelcaseNamingAnalyzer();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace LearnRoslyn
 
         public sealed override ImmutableArray<string> FixableDiagnosticIds
         {
-            get { return ImmutableArray.Create(LearnRoslynAnalyzer.DiagnosticId); }
+            get { return ImmutableArray.Create(LocalVariableCamelcaseNamingAnalyzer.DiagnosticId); }
         }
 
         public sealed override FixAllProvider GetFixAllProvider()
