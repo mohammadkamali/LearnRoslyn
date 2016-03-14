@@ -36,15 +36,13 @@ namespace LearnRoslyn
 
             foreach (VariableDeclaratorSyntax variable in localDeclaration.Declaration.Variables)
             {
-                if (variable.FullSpan.Length != 0)
+
+                if (!(char.IsLower(variable.Identifier.ValueText[0])))
                 {
-                    if (char.IsLower(variable.ToString()[0]))
-                    {
-                        return;
-                    }
+                    obj.ReportDiagnostic(Diagnostic.Create(Rule, obj.Node.GetLocation()));
                 }
+
             }
-            obj.ReportDiagnostic(Diagnostic.Create(Rule, obj.Node.GetLocation()));
 
         }
 
